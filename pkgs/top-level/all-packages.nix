@@ -25780,6 +25780,8 @@ with pkgs;
     opencv = python3Packages.opencv3;
   };
 
+  manim-community = python3Packages.callPackage ../applications/video/manim-community { };
+
   manuskript = libsForQt5.callPackage ../applications/editors/manuskript { };
 
   manul = callPackage ../development/tools/manul { };
