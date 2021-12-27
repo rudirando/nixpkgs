@@ -119,13 +119,6 @@ buildPythonApplication rec {
   # include tests
   doCheck = false;
 
-  # provide a new / unique name for everything in bin, in case one wants to have both
-  # manim-packages installed
-  postInstall = ''
-    mv $out/bin/manim $out/bin/manim-com
-    mv $out/bin/manimce $out/bin/manimce-com
-  '';
-
   meta = with lib; {
     description = "Animation engine for explanatory math videos - Community version";
     longDescription = ''
