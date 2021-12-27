@@ -17,8 +17,7 @@ with python3Packages; buildPythonPackage rec {
     sha256 = "14z2vj13a1qcaqc6jvg00f367la5470bclvfi9mmlvpac3hhhywd";
     };
 
-    nativeBuildInputs = [ setuptools ];
-    buildInputs = [ pybind11 ];
+    nativeBuildInputs = [ setuptools pybind11 ];
     propagatedBuildInputs = [ numpy ];
 
     # Some test failed, some passed...
