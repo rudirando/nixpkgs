@@ -1663,6 +1663,8 @@ in {
 
   cloudsplaining = callPackage ../development/python-modules/cloudsplaining { };
 
+  cloup = callPackage ../development/python-modules/cloup { };
+
   clustershell = callPackage ../development/python-modules/clustershell { };
 
   clvm = callPackage ../development/python-modules/clvm { };
