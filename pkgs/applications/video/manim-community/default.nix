@@ -31,6 +31,7 @@
 , moderngl
 , moderngl-window
 , mapbox-earcut
+, click
 }:
 
 let
@@ -70,13 +71,13 @@ let
 in
 buildPythonApplication rec {
   pname = "manim-community";
-  version = "0.5.0";
+  version = "0.9.0";
   disabled = pythonOlder "3.8";
 
   src = fetchPypi {
     pname = "manim";
     inherit version;
-    sha256 = "e4284648cbb5d463c6dbced1d4e60fa9b68c14f4bb3b10c8eab0f8f49ca5da88";
+    sha256 = "23834fa6abe8741eebd28fd1da845eb082642ae724167da39cbd10cff829574f";
   };
 
   postPatch = ''
@@ -106,6 +107,7 @@ buildPythonApplication rec {
     moderngl
     moderngl-window
     mapbox-earcut
+    click
 
     cairo
     sox
