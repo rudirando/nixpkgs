@@ -32,6 +32,9 @@
 , moderngl-window
 , mapbox-earcut
 , click
+, cloup
+, screeninfo
+, click-default-group
 }:
 
 let
@@ -108,6 +111,9 @@ buildPythonApplication rec {
     moderngl-window
     mapbox-earcut
     click
+    cloup
+    screeninfo
+    click-default-group
 
     cairo
     sox
