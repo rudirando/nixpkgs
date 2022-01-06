@@ -117,7 +117,7 @@ buildPythonApplication rec {
 
     cairo
     sox
-    ffmpeg_4
+    ffmpeg
     xdg-utils
 
     (texlive.combine manim-tinytex)
