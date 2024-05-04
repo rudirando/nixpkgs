@@ -2,7 +2,7 @@
 , fetchFromGitHub
 , autoreconfHook
 , pkg-config
-, rofi-unwrapped
+, rofi-wayland
 , libqalculate
 , glib
 , cairo
