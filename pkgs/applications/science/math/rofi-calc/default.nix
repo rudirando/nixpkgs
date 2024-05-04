@@ -29,7 +29,7 @@ stdenv.mkDerivation rec {
   ];
 
   buildInputs = [
-    rofi-unwrapped
+    rofi-wayland
     libqalculate
     glib
     cairo
