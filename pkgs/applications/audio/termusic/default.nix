@@ -29,7 +29,7 @@ rustPlatform.buildRustPackage rec {
   src = fetchFromGitHub {
     owner = "tramhao";
     repo = "termusic";
-    rev = "v${version}";
+    rev = "master";
     hash = "sha256-aEkg1j6R86QGn21HBimtZwmjmW1K9Wo+67G4DlpY960=";
   };
 
