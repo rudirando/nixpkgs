@@ -23,30 +23,30 @@
 }:
 
 rustPlatform.buildRustPackage rec {
-  pname = "termusic";
+  pname = "termusic-master";
   version = "0.9.1";
 
   src = fetchFromGitHub {
     owner = "tramhao";
     repo = "termusic";
-    rev = "master";
-    hash = "sha256-aEkg1j6R86QGn21HBimtZwmjmW1K9Wo+67G4DlpY960=";
+    rev = "d82806cd15a7916bd4a2b1b93434c19c6ea2d1fb";
+    hash = "sha256-dGwTMS1wUL90uNhS3kM+V+y7mI0TbQBIN4W0I4mSf0A=";
   };
 
-  cargoPatches = [
-    # both following patches can be removed with the follow up release to 0.9.1 as they are cherry-picked from `termusic/master` branch
-    # fix build issue with 0.9.1 release and vendoring producing wrong hash for soundtouch-ffi
-    (fetchpatch {
-      url = "https://github.com/tramhao/termusic/commit/211fc3fe008932d052d31d3b836e8a80eade3cfe.patch";
-      hash = "sha256-11kSI28YonoTe5W31+R76lGhNiN1ZLAg94FrfYiZUAY=";
-    })
-    # fix a bug through previous patch
-    (fetchpatch {
-      url = "https://github.com/tramhao/termusic/commit/2a40b2f366dfa5c1f008c79a3ff5c1bbf53fe10f.patch";
-      hash = "sha256-b7CJ5SqxrU1Jr4GDaJe9sFutDHMqIQxGhXbBFGB6y84=";
-    })
-  ];
-
+  # cargoPatches = [
+  #   # both following patches can be removed with the follow up release to 0.9.1 as they are cherry-picked from `termusic/master` branch
+  #   # fix build issue with 0.9.1 release and vendoring producing wrong hash for soundtouch-ffi
+  #   (fetchpatch {
+  #     url = "https://github.com/tramhao/termusic/commit/211fc3fe008932d052d31d3b836e8a80eade3cfe.patch";
+  #     hash = "sha256-11kSI28YonoTe5W31+R76lGhNiN1ZLAg94FrfYiZUAY=";
+  #   })
+  #   # fix a bug through previous patch
+  #   (fetchpatch {
+  #     url = "https://github.com/tramhao/termusic/commit/2a40b2f366dfa5c1f008c79a3ff5c1bbf53fe10f.patch";
+  #     hash = "sha256-b7CJ5SqxrU1Jr4GDaJe9sFutDHMqIQxGhXbBFGB6y84=";
+  #   })
+  # ];
+  #
   postPatch = ''
     pushd $cargoDepsCopy/stream-download
     oldHash=$(sha256sum src/lib.rs | cut -d " " -f 1)
@@ -57,7 +57,7 @@ rustPlatform.buildRustPackage rec {
     popd
   '';
 
-  cargoHash = "sha256-4PprZdTIcYa8y7FwQVrG0ZBg7N/Xe6HDt/z6ZmaHd5Y=";
+  cargoHash = "sha256-umPRYUpJEnK+dHJxLubZhY2kH0Fqpds1Y8x8FVK8lVQ=";
 
   useNextest = true;
 
